@@ -1,0 +1,190 @@
+2024-07-03 16:46:09,662 - DEBUG - Starting new HTTPS connection (1): finance.yahoo.com:443
+2024-07-03 16:46:10,524 - DEBUG - https://finance.yahoo.com:443 "GET /lookup/all?s=AA&t=A&b=0&c=25 HTTP/11" 200 None
+2024-07-03 16:46:10,767 - INFO - Counts: AA 1009
+2024-07-03 16:46:10,768 - INFO - Processing: AA0
+2024-07-03 16:46:10,769 - DEBUG - Starting new HTTPS connection (1): finance.yahoo.com:443
+2024-07-03 16:46:11,543 - DEBUG - https://finance.yahoo.com:443 "GET /lookup/all?s=AA&t=A&b=0&c=100 HTTP/11" 200 None
+2024-07-03 16:46:11,782 - WARNING - Couldn't find any search data 
+2024-07-03 16:46:11,783 - DEBUG - Starting new HTTPS connection (1): finance.yahoo.com:443
+2024-07-03 16:46:12,656 - DEBUG - https://finance.yahoo.com:443 "GET /lookup/all?s=AB&t=A&b=0&c=25 HTTP/11" 200 None
+2024-07-03 16:46:12,887 - INFO - Counts: AB 9856
+2024-07-03 16:46:12,889 - DEBUG - Starting new HTTPS connection (1): finance.yahoo.com:443
+2024-07-03 16:46:13,765 - DEBUG - https://finance.yahoo.com:443 "GET /lookup/all?s=ABA&t=A&b=0&c=25 HTTP/11" 200 None
+2024-07-03 16:46:13,993 - INFO - Counts: ABA 189
+2024-07-03 16:46:13,993 - INFO - Processing: ABA0
+2024-07-03 16:46:13,995 - DEBUG - Starting new HTTPS connection (1): finance.yahoo.com:443
+2024-07-03 16:46:14,864 - DEBUG - https://finance.yahoo.com:443 "GET /lookup/all?s=ABA&t=A&b=0&c=100 HTTP/11" 200 None
+2024-07-03 16:46:15,132 - WARNING - Couldn't find any search data 
+2024-07-03 16:46:15,133 - DEBUG - Starting new HTTPS connection (1): finance.yahoo.com:443
+2024-07-03 16:46:16,029 - DEBUG - https://finance.yahoo.com:443 "GET /lookup/all?s=ABB&t=A&b=0&c=25 HTTP/11" 200 None
+2024-07-03 16:46:16,259 - INFO - Counts: ABB 778
+2024-07-03 16:46:16,259 - INFO - Processing: ABB0
+2024-07-03 16:46:16,261 - DEBUG - Starting new HTTPS connection (1): finance.yahoo.com:443
+2024-07-03 16:46:16,968 - DEBUG - https://finance.yahoo.com:443 "GET /lookup/all?s=ABB&t=A&b=0&c=100 HTTP/11" 200 None
+2024-07-03 16:46:17,171 - WARNING - Couldn't find any search data 
+2024-07-03 16:46:17,172 - DEBUG - Starting new HTTPS connection (1): finance.yahoo.com:443
+2024-07-03 16:46:18,226 - DEBUG - https://finance.yahoo.com:443 "GET /lookup/all?s=ABC&t=A&b=0&c=25 HTTP/11" 200 None
+2024-07-03 16:46:18,658 - INFO - Counts: ABC 126
+2024-07-03 16:46:18,658 - INFO - Processing: ABC0
+2024-07-03 16:46:18,660 - DEBUG - Starting new HTTPS connection (1): finance.yahoo.com:443
+2024-07-03 16:46:19,629 - DEBUG - https://finance.yahoo.com:443 "GET /lookup/all?s=ABC&t=A&b=0&c=100 HTTP/11" 200 None
+2024-07-03 16:46:19,903 - WARNING - Couldn't find any search data 
+2024-07-03 16:46:19,904 - DEBUG - Starting new HTTPS connection (1): finance.yahoo.com:443
+2024-07-03 16:46:20,759 - DEBUG - https://finance.yahoo.com:443 "GET /lookup/all?s=ABD&t=A&b=0&c=25 HTTP/11" 200 None
+2024-07-03 16:46:21,000 - INFO - Counts: ABD 182
+2024-07-03 16:46:21,000 - INFO - Processing: ABD0
+2024-07-03 16:46:21,002 - DEBUG - Starting new HTTPS connection (1): finance.yahoo.com:443
+2024-07-03 16:46:21,956 - DEBUG - https://finance.yahoo.com:443 "GET /lookup/all?s=ABD&t=A&b=0&c=100 HTTP/11" 200 None
+2024-07-03 16:46:22,198 - WARNING - Couldn't find any search data 
+2024-07-03 16:46:22,199 - DEBUG - Starting new HTTPS connection (1): finance.yahoo.com:443
+2024-07-03 16:46:23,042 - DEBUG - https://finance.yahoo.com:443 "GET /lookup/all?s=ABE&t=A&b=0&c=25 HTTP/11" 200 None
+2024-07-03 16:46:23,253 - INFO - Counts: ABE 235
+2024-07-03 16:46:23,253 - INFO - Processing: ABE0
+2024-07-03 16:46:23,254 - DEBUG - Starting new HTTPS connection (1): finance.yahoo.com:443
+2024-07-03 16:46:24,235 - DEBUG - https://finance.yahoo.com:443 "GET /lookup/all?s=ABE&t=A&b=0&c=100 HTTP/11" 200 None
+2024-07-03 16:46:24,487 - WARNING - Couldn't find any search data 
+2024-07-03 16:46:24,489 - DEBUG - Starting new HTTPS connection (1): finance.yahoo.com:443
+2024-07-03 16:46:25,572 - DEBUG - https://finance.yahoo.com:443 "GET /lookup/all?s=ABF&t=A&b=0&c=25 HTTP/11" 200 None
+2024-07-03 16:46:25,775 - INFO - Counts: ABF 47
+2024-07-03 16:46:25,775 - INFO - Processing: ABF0
+2024-07-03 16:46:25,777 - DEBUG - Starting new HTTPS connection (1): finance.yahoo.com:443
+2024-07-03 16:46:26,733 - DEBUG - https://finance.yahoo.com:443 "GET /lookup/all?s=ABF&t=A&b=0&c=100 HTTP/11" 200 None
+2024-07-03 16:46:26,992 - WARNING - Couldn't find any search data 
+2024-07-03 16:46:26,998 - DEBUG - Starting new HTTPS connection (1): finance.yahoo.com:443
+2024-07-03 16:46:27,780 - DEBUG - https://finance.yahoo.com:443 "GET /lookup/all?s=ABG&t=A&b=0&c=25 HTTP/11" 200 None
+2024-07-03 16:46:27,988 - INFO - Counts: ABG 57
+2024-07-03 16:46:27,988 - INFO - Processing: ABG0
+2024-07-03 16:46:27,989 - DEBUG - Starting new HTTPS connection (1): finance.yahoo.com:443
+2024-07-03 16:46:28,788 - DEBUG - https://finance.yahoo.com:443 "GET /lookup/all?s=ABG&t=A&b=0&c=100 HTTP/11" 200 None
+2024-07-03 16:46:29,020 - WARNING - Couldn't find any search data 
+2024-07-03 16:46:29,021 - DEBUG - Starting new HTTPS connection (1): finance.yahoo.com:443
+2024-07-03 16:46:29,895 - DEBUG - https://finance.yahoo.com:443 "GET /lookup/all?s=ABH&t=A&b=0&c=25 HTTP/11" 200 None
+2024-07-03 16:46:30,092 - INFO - Counts: ABH 48
+2024-07-03 16:46:30,092 - INFO - Processing: ABH0
+2024-07-03 16:46:30,094 - DEBUG - Starting new HTTPS connection (1): finance.yahoo.com:443
+2024-07-03 16:46:30,960 - DEBUG - https://finance.yahoo.com:443 "GET /lookup/all?s=ABH&t=A&b=0&c=100 HTTP/11" 200 None
+2024-07-03 16:46:31,207 - WARNING - Couldn't find any search data 
+2024-07-03 16:46:31,208 - DEBUG - Starting new HTTPS connection (1): finance.yahoo.com:443
+2024-07-03 16:46:32,064 - DEBUG - https://finance.yahoo.com:443 "GET /lookup/all?s=ABI&t=A&b=0&c=25 HTTP/11" 200 None
+2024-07-03 16:46:32,291 - INFO - Counts: ABI 180
+2024-07-03 16:46:32,292 - INFO - Processing: ABI0
+2024-07-03 16:46:32,294 - DEBUG - Starting new HTTPS connection (1): finance.yahoo.com:443
+2024-07-03 16:46:33,295 - DEBUG - https://finance.yahoo.com:443 "GET /lookup/all?s=ABI&t=A&b=0&c=100 HTTP/11" 200 None
+2024-07-03 16:46:33,511 - WARNING - Couldn't find any search data 
+2024-07-03 16:46:33,512 - DEBUG - Starting new HTTPS connection (1): finance.yahoo.com:443
+2024-07-03 16:46:34,400 - DEBUG - https://finance.yahoo.com:443 "GET /lookup/all?s=ABJ&t=A&b=0&c=25 HTTP/11" 200 None
+2024-07-03 16:46:34,601 - INFO - Counts: ABJ 21
+2024-07-03 16:46:34,602 - INFO - Processing: ABJ0
+2024-07-03 16:46:34,603 - DEBUG - Starting new HTTPS connection (1): finance.yahoo.com:443
+2024-07-03 16:46:35,371 - DEBUG - https://finance.yahoo.com:443 "GET /lookup/all?s=ABJ&t=A&b=0&c=100 HTTP/11" 200 None
+2024-07-03 16:46:35,573 - WARNING - Couldn't find any search data 
+2024-07-03 16:46:35,575 - DEBUG - Starting new HTTPS connection (1): finance.yahoo.com:443
+2024-07-03 16:46:36,580 - DEBUG - https://finance.yahoo.com:443 "GET /lookup/all?s=ABK&t=A&b=0&c=25 HTTP/11" 200 None
+2024-07-03 16:46:36,820 - INFO - Counts: ABK 51
+2024-07-03 16:46:36,820 - INFO - Processing: ABK0
+2024-07-03 16:46:36,821 - DEBUG - Starting new HTTPS connection (1): finance.yahoo.com:443
+2024-07-03 16:46:37,501 - DEBUG - https://finance.yahoo.com:443 "GET /lookup/all?s=ABK&t=A&b=0&c=100 HTTP/11" 200 None
+2024-07-03 16:46:37,659 - WARNING - Couldn't find any search data 
+2024-07-03 16:46:37,660 - DEBUG - Starting new HTTPS connection (1): finance.yahoo.com:443
+2024-07-03 16:46:38,697 - DEBUG - https://finance.yahoo.com:443 "GET /lookup/all?s=ABL&t=A&b=0&c=25 HTTP/11" 200 None
+2024-07-03 16:46:38,913 - INFO - Counts: ABL 89
+2024-07-03 16:46:38,913 - INFO - Processing: ABL0
+2024-07-03 16:46:38,914 - DEBUG - Starting new HTTPS connection (1): finance.yahoo.com:443
+2024-07-03 16:46:39,680 - DEBUG - https://finance.yahoo.com:443 "GET /lookup/all?s=ABL&t=A&b=0&c=100 HTTP/11" 200 None
+2024-07-03 16:46:39,924 - WARNING - Couldn't find any search data 
+2024-07-03 16:46:39,926 - DEBUG - Starting new HTTPS connection (1): finance.yahoo.com:443
+2024-07-03 16:46:40,780 - DEBUG - https://finance.yahoo.com:443 "GET /lookup/all?s=ABM&t=A&b=0&c=25 HTTP/11" 200 None
+2024-07-03 16:46:40,960 - INFO - Counts: ABM 51
+2024-07-03 16:46:40,960 - INFO - Processing: ABM0
+2024-07-03 16:46:40,962 - DEBUG - Starting new HTTPS connection (1): finance.yahoo.com:443
+2024-07-03 16:46:41,859 - DEBUG - https://finance.yahoo.com:443 "GET /lookup/all?s=ABM&t=A&b=0&c=100 HTTP/11" 200 None
+2024-07-03 16:46:42,127 - WARNING - Couldn't find any search data 
+2024-07-03 16:46:42,128 - DEBUG - Starting new HTTPS connection (1): finance.yahoo.com:443
+2024-07-03 16:46:43,089 - DEBUG - https://finance.yahoo.com:443 "GET /lookup/all?s=ABN&t=A&b=0&c=25 HTTP/11" 200 None
+2024-07-03 16:46:43,335 - INFO - Counts: ABN 413
+2024-07-03 16:46:43,335 - INFO - Processing: ABN0
+2024-07-03 16:46:43,336 - DEBUG - Starting new HTTPS connection (1): finance.yahoo.com:443
+2024-07-03 16:46:44,182 - DEBUG - https://finance.yahoo.com:443 "GET /lookup/all?s=ABN&t=A&b=0&c=100 HTTP/11" 200 None
+2024-07-03 16:46:44,518 - WARNING - Couldn't find any search data 
+2024-07-03 16:46:44,519 - DEBUG - Starting new HTTPS connection (1): finance.yahoo.com:443
+2024-07-03 16:46:45,429 - DEBUG - https://finance.yahoo.com:443 "GET /lookup/all?s=ABO&t=A&b=0&c=25 HTTP/11" 200 None
+2024-07-03 16:46:45,700 - INFO - Counts: ABO 86
+2024-07-03 16:46:45,700 - INFO - Processing: ABO0
+2024-07-03 16:46:45,702 - DEBUG - Starting new HTTPS connection (1): finance.yahoo.com:443
+2024-07-03 16:46:46,468 - DEBUG - https://finance.yahoo.com:443 "GET /lookup/all?s=ABO&t=A&b=0&c=100 HTTP/11" 200 None
+2024-07-03 16:46:46,667 - WARNING - Couldn't find any search data 
+2024-07-03 16:46:46,669 - DEBUG - Starting new HTTPS connection (1): finance.yahoo.com:443
+2024-07-03 16:46:47,549 - DEBUG - https://finance.yahoo.com:443 "GET /lookup/all?s=ABP&t=A&b=0&c=25 HTTP/11" 200 None
+2024-07-03 16:46:47,798 - INFO - Counts: ABP 92
+2024-07-03 16:46:47,798 - INFO - Processing: ABP0
+2024-07-03 16:46:47,800 - DEBUG - Starting new HTTPS connection (1): finance.yahoo.com:443
+2024-07-03 16:46:48,790 - DEBUG - https://finance.yahoo.com:443 "GET /lookup/all?s=ABP&t=A&b=0&c=100 HTTP/11" 200 None
+2024-07-03 16:46:48,965 - WARNING - Couldn't find any search data 
+2024-07-03 16:46:48,966 - DEBUG - Starting new HTTPS connection (1): finance.yahoo.com:443
+2024-07-03 16:46:49,776 - DEBUG - https://finance.yahoo.com:443 "GET /lookup/all?s=ABQ&t=A&b=0&c=25 HTTP/11" 200 None
+2024-07-03 16:46:50,003 - INFO - Counts: ABQ 27
+2024-07-03 16:46:50,003 - INFO - Processing: ABQ0
+2024-07-03 16:46:50,005 - DEBUG - Starting new HTTPS connection (1): finance.yahoo.com:443
+2024-07-03 16:46:50,881 - DEBUG - https://finance.yahoo.com:443 "GET /lookup/all?s=ABQ&t=A&b=0&c=100 HTTP/11" 200 None
+2024-07-03 16:46:51,145 - WARNING - Couldn't find any search data 
+2024-07-03 16:46:51,146 - DEBUG - Starting new HTTPS connection (1): finance.yahoo.com:443
+2024-07-03 16:46:51,835 - DEBUG - https://finance.yahoo.com:443 "GET /lookup/all?s=ABR&t=A&b=0&c=25 HTTP/11" 200 None
+2024-07-03 16:46:52,030 - INFO - Counts: ABR 1906
+2024-07-03 16:46:52,030 - INFO - Processing: ABR0
+2024-07-03 16:46:52,032 - DEBUG - Starting new HTTPS connection (1): finance.yahoo.com:443
+2024-07-03 16:46:52,830 - DEBUG - https://finance.yahoo.com:443 "GET /lookup/all?s=ABR&t=A&b=0&c=100 HTTP/11" 200 None
+2024-07-03 16:46:53,048 - WARNING - Couldn't find any search data 
+2024-07-03 16:46:53,049 - DEBUG - Starting new HTTPS connection (1): finance.yahoo.com:443
+2024-07-03 16:46:53,960 - DEBUG - https://finance.yahoo.com:443 "GET /lookup/all?s=ABS&t=A&b=0&c=25 HTTP/11" 200 None
+2024-07-03 16:46:54,189 - INFO - Counts: ABS 1115
+2024-07-03 16:46:54,189 - INFO - Processing: ABS0
+2024-07-03 16:46:54,190 - DEBUG - Starting new HTTPS connection (1): finance.yahoo.com:443
+2024-07-03 16:46:55,343 - DEBUG - https://finance.yahoo.com:443 "GET /lookup/all?s=ABS&t=A&b=0&c=100 HTTP/11" 200 None
+2024-07-03 16:46:55,567 - WARNING - Couldn't find any search data 
+2024-07-03 16:46:55,569 - DEBUG - Starting new HTTPS connection (1): finance.yahoo.com:443
+2024-07-03 16:46:56,451 - DEBUG - https://finance.yahoo.com:443 "GET /lookup/all?s=ABT&t=A&b=0&c=25 HTTP/11" 200 None
+2024-07-03 16:46:56,691 - INFO - Counts: ABT 69
+2024-07-03 16:46:56,692 - INFO - Processing: ABT0
+2024-07-03 16:46:56,693 - DEBUG - Starting new HTTPS connection (1): finance.yahoo.com:443
+2024-07-03 16:46:57,610 - DEBUG - https://finance.yahoo.com:443 "GET /lookup/all?s=ABT&t=A&b=0&c=100 HTTP/11" 200 None
+2024-07-03 16:46:57,901 - WARNING - Couldn't find any search data 
+2024-07-03 16:46:57,902 - DEBUG - Starting new HTTPS connection (1): finance.yahoo.com:443
+2024-07-03 16:46:58,633 - DEBUG - https://finance.yahoo.com:443 "GET /lookup/all?s=ABU&t=A&b=0&c=25 HTTP/11" 200 None
+2024-07-03 16:46:58,841 - INFO - Counts: ABU 56
+2024-07-03 16:46:58,841 - INFO - Processing: ABU0
+2024-07-03 16:46:58,842 - DEBUG - Starting new HTTPS connection (1): finance.yahoo.com:443
+2024-07-03 16:46:59,745 - DEBUG - https://finance.yahoo.com:443 "GET /lookup/all?s=ABU&t=A&b=0&c=100 HTTP/11" 200 None
+2024-07-03 16:47:00,188 - WARNING - Couldn't find any search data 
+2024-07-03 16:47:00,189 - DEBUG - Starting new HTTPS connection (1): finance.yahoo.com:443
+2024-07-03 16:47:01,065 - DEBUG - https://finance.yahoo.com:443 "GET /lookup/all?s=ABV&t=A&b=0&c=25 HTTP/11" 200 None
+2024-07-03 16:47:01,295 - INFO - Counts: ABV 42
+2024-07-03 16:47:01,296 - INFO - Processing: ABV0
+2024-07-03 16:47:01,296 - DEBUG - Starting new HTTPS connection (1): finance.yahoo.com:443
+2024-07-03 16:47:02,069 - DEBUG - https://finance.yahoo.com:443 "GET /lookup/all?s=ABV&t=A&b=0&c=100 HTTP/11" 200 None
+2024-07-03 16:47:02,307 - WARNING - Couldn't find any search data 
+2024-07-03 16:47:02,309 - DEBUG - Starting new HTTPS connection (1): finance.yahoo.com:443
+2024-07-03 16:47:03,140 - DEBUG - https://finance.yahoo.com:443 "GET /lookup/all?s=ABW&t=A&b=0&c=25 HTTP/11" 200 None
+2024-07-03 16:47:03,289 - INFO - Counts: ABW 30
+2024-07-03 16:47:03,289 - INFO - Processing: ABW0
+2024-07-03 16:47:03,291 - DEBUG - Starting new HTTPS connection (1): finance.yahoo.com:443
+2024-07-03 16:47:04,132 - DEBUG - https://finance.yahoo.com:443 "GET /lookup/all?s=ABW&t=A&b=0&c=100 HTTP/11" 200 None
+2024-07-03 16:47:04,320 - WARNING - Couldn't find any search data 
+2024-07-03 16:47:04,321 - DEBUG - Starting new HTTPS connection (1): finance.yahoo.com:443
+2024-07-03 16:47:05,013 - DEBUG - https://finance.yahoo.com:443 "GET /lookup/all?s=ABX&t=A&b=0&c=25 HTTP/11" 200 None
+2024-07-03 16:47:05,244 - INFO - Counts: ABX 46
+2024-07-03 16:47:05,245 - INFO - Processing: ABX0
+2024-07-03 16:47:05,247 - DEBUG - Starting new HTTPS connection (1): finance.yahoo.com:443
+2024-07-03 16:47:06,123 - DEBUG - https://finance.yahoo.com:443 "GET /lookup/all?s=ABX&t=A&b=0&c=100 HTTP/11" 200 None
+2024-07-03 16:47:06,398 - WARNING - Couldn't find any search data 
+2024-07-03 16:47:06,399 - DEBUG - Starting new HTTPS connection (1): finance.yahoo.com:443
+2024-07-03 16:47:07,176 - DEBUG - https://finance.yahoo.com:443 "GET /lookup/all?s=ABY&t=A&b=0&c=25 HTTP/11" 200 None
+2024-07-03 16:47:07,409 - INFO - Counts: ABY 43
+2024-07-03 16:47:07,409 - INFO - Processing: ABY0
+2024-07-03 16:47:07,410 - DEBUG - Starting new HTTPS connection (1): finance.yahoo.com:443
+2024-07-03 16:47:08,303 - DEBUG - https://finance.yahoo.com:443 "GET /lookup/all?s=ABY&t=A&b=0&c=100 HTTP/11" 200 None
+2024-07-03 16:47:08,535 - WARNING - Couldn't find any search data 
+2024-07-03 16:47:08,537 - DEBUG - Starting new HTTPS connection (1): finance.yahoo.com:443
+2024-07-03 16:47:09,291 - DEBUG - https://finance.yahoo.com:443 "GET /lookup/all?s=ABZ&t=A&b=0&c=25 HTTP/11" 200 None
+2024-07-03 16:47:09,533 - INFO - Counts: ABZ 30
+2024-07-03 16:47:09,533 - INFO - Processing: ABZ0
+2024-07-03 16:47:09,534 - DEBUG - Starting new HTTPS connection (1): finance.yahoo.com:443
