@@ -66,10 +66,6 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# Check if the image path is correct
-import os
-if not os.path.isfile('assets/icon.png'):
-    st.error("Logo image not found. Please ensure 'assets/icon.png' exists.")
 
 # Display login form if user is not authenticated
 if not st.session_state["authenticated"]:
