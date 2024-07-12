@@ -40,7 +40,6 @@ st.markdown("""
         margin: auto;        
         border-radius: 50px;
         box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        
     }
     .login-left {
         text-align: center;
@@ -49,7 +48,6 @@ st.markdown("""
         border-radius: 30px;
         padding: 50px;
         width: 100%;
-        
     }
     .login-title {
         font-size: 2.5em;    
@@ -104,7 +102,7 @@ if not st.session_state.auth_status["authenticated"]:
         login_error_message="Wrong username/password ❌",
         guest_submit_label="Guest login"
     )
-    
+
     if st.session_state.get("authenticated"):
         set_auth_status(st.session_state["authenticated"], st.session_state["username"])
         st.rerun()
@@ -113,7 +111,12 @@ if not st.session_state.auth_status["authenticated"]:
 
 else:
     username = st.session_state.auth_status["username"]
-    portfolios = load_portfolios(username)
+
+    @st.cache_data(ttl=600)
+    def load_user_portfolios(username):
+        return load_portfolios(username)
+
+    portfolios = load_user_portfolios(username)
 
     with st.sidebar:
         st.title("Navigation")
@@ -131,14 +134,6 @@ else:
             st.rerun()
 
     if selected_item == 'Home':
-        st.session_state.last_page = 'Home'
         home(username)
     elif selected_item in portfolios:
-        st.session_state.last_page = selected_item
         portfolio(username, selected_item)
-
-    # Redirect to last visited page upon reload
-    if st.session_state.last_page == 'Home':
-        home(username)
-    elif st.session_state.last_page in portfolios:
-        portfolio(username, st.session_state.last_page)

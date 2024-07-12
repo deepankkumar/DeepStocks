@@ -116,8 +116,8 @@ def home(username):
                 st.plotly_chart(create_ytd_growth_chart(Ticker, get_historical_data))
 
             with st.form(key='add_stock_form'):
-                Shares = st.number_input("No. of Shares", min_value=1, step=1, key="Shares_input")
-                Buy_rate = st.number_input("Buy rate ($/unit)", min_value=0.01, step=0.01, key="Buy_rate_input")
+                Shares = st.number_input("No. of Shares", min_value=0.1, step=1.0, key="Shares_input", help="Enter the number of shares you own.", format="%.6f", placeholder="Type Here...")
+                Buy_rate = st.number_input("Buy rate ($/unit)", min_value=0.01, step=0.01, key="Buy_rate_input", help="Enter the buy rate per unit.", format="%.2f")
                 submit_button = st.form_submit_button(label='Add Stock')
                 
                 if submit_button:
