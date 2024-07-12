@@ -4,24 +4,30 @@ from dashboard.home import home
 from dashboard.portfolio import portfolio
 from helpers.data import load_portfolios
 from helpers.login_form import login_form
+from streamlit_cookies_manager import EncryptedCookieManager
+import os
+import json
 
 st.set_page_config(page_title="DeepStocks", layout="centered")
 
-@st.cache_data
-def get_auth_status():
-    if 'auth_status' not in st.session_state:
-        st.session_state['auth_status'] = {"authenticated": False, "username": None}
-    return st.session_state['auth_status']
+# Set your encryption password
+# It's better to store the password in an environment variable for security reasons
+encryption_password = os.getenv("COOKIE_ENCRYPTION_PASSWORD", "your_default_password")
+
+# Initialize cookies
+cookies = EncryptedCookieManager(prefix="deepstocks_", password=encryption_password)
+if not cookies.ready():
+    st.stop()
+
+# Check cookies for authentication status
+auth_status_str = cookies.get("auth_status", json.dumps({"authenticated": False, "username": None}))
+auth_status = json.loads(auth_status_str)
+st.session_state.auth_status = auth_status
 
 def set_auth_status(authenticated, username):
-    st.session_state['auth_status'] = {"authenticated": authenticated, "username": username}
-    st.cache_data.clear()  # Clear the cache to update the status
-
-# Initialize session state with cached authentication status
-auth_status = get_auth_status()
-if "authenticated" not in st.session_state:
-    st.session_state.authenticated = auth_status["authenticated"]
-    st.session_state.username = auth_status["username"]
+    st.session_state.auth_status = {"authenticated": authenticated, "username": username}
+    cookies["auth_status"] = json.dumps(st.session_state.auth_status)
+    cookies.save()
 
 # Custom CSS for the login page
 st.markdown("""
@@ -66,9 +72,8 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-
 # Display login form if user is not authenticated
-if not st.session_state["authenticated"]:
+if not st.session_state.auth_status["authenticated"]:
     st.markdown("""
         <div class="login-box">
             <div class="login-left">
@@ -82,7 +87,7 @@ if not st.session_state["authenticated"]:
         user_tablename="users",
         username_col="username",
         password_col="password",
-        create_title="Create an account 🚀",
+        create_title="Create an account 🌔",
         login_title="Login to your account key 🔑",
         allow_guest=False,
         allow_create=True,
@@ -100,14 +105,14 @@ if not st.session_state["authenticated"]:
         guest_submit_label="Guest login"
     )
     
-    if st.session_state["authenticated"]:
+    if st.session_state.get("authenticated"):
         set_auth_status(st.session_state["authenticated"], st.session_state["username"])
         st.rerun()
     
     st.markdown("</div>", unsafe_allow_html=True)
 
 else:
-    username = st.session_state.get("username", "Guest")
+    username = st.session_state.auth_status["username"]
     portfolios = load_portfolios(username)
 
     with st.sidebar:
@@ -122,12 +127,18 @@ else:
 
         st.markdown("---")
         if st.button("Logout"):
-            st.session_state.authenticated = False
-            st.session_state.username = None
             set_auth_status(False, None)
             st.rerun()
 
     if selected_item == 'Home':
+        st.session_state.last_page = 'Home'
         home(username)
     elif selected_item in portfolios:
+        st.session_state.last_page = selected_item
         portfolio(username, selected_item)
+
+    # Redirect to last visited page upon reload
+    if st.session_state.last_page == 'Home':
+        home(username)
+    elif st.session_state.last_page in portfolios:
+        portfolio(username, st.session_state.last_page)
