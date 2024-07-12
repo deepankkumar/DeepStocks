@@ -1,0 +1,6 @@
+streamlit_antd_components
+st-login-form
+pandas
+yahooquery
+yfinance
+plotly
