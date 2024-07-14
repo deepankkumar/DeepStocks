@@ -5,29 +5,33 @@ from dashboard.portfolio import portfolio
 from helpers.data import load_portfolios
 from helpers.login_form import login_form
 from streamlit_cookies_manager import EncryptedCookieManager
-import os
 import json
 
+# Set the page config as the very first Streamlit command
 st.set_page_config(page_title="DeepStocks", layout="centered")
 
-# Set your encryption password
-# It's better to store the password in an environment variable for security reasons
-encryption_password = os.getenv("COOKIE_ENCRYPTION_PASSWORD", "your_default_password")
+# Create a cookie manager
+cookies = EncryptedCookieManager(
+    prefix='deepstocks',  # optional prefix to distinguish your cookies
+    password="your_secret_password"  # change this to a strong secret password
+)
 
-# Initialize cookies
-cookies = EncryptedCookieManager(prefix="deepstocks_", password=encryption_password)
 if not cookies.ready():
-    st.stop()
+    st.stop()  # wait for the cookies manager to be ready
 
-# Check cookies for authentication status
-auth_status_str = cookies.get("auth_status", json.dumps({"authenticated": False, "username": None}))
-auth_status = json.loads(auth_status_str)
-st.session_state.auth_status = auth_status
-
+# Function to set authentication status
 def set_auth_status(authenticated, username):
     st.session_state.auth_status = {"authenticated": authenticated, "username": username}
-    cookies["auth_status"] = json.dumps(st.session_state.auth_status)
+    cookies["auth_status"] = json.dumps({"authenticated": authenticated, "username": username})
     cookies.save()
+
+# Initialize session state
+if "auth_status" not in st.session_state:
+    auth_status = cookies.get("auth_status")
+    if auth_status:
+        st.session_state.auth_status = json.loads(auth_status)
+    else:
+        st.session_state.auth_status = {"authenticated": False, "username": None}
 
 # Custom CSS for the login page
 st.markdown("""
@@ -52,7 +56,7 @@ st.markdown("""
     .login-title {
         font-size: 2.5em;    
         font-weight: bold;
-        color: #ff4b4b;
+        color: white;
     }
     .login-logo {
         width: 170px;
@@ -70,13 +74,13 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# Display login form if user is not authenticated
+# Check authentication status
 if not st.session_state.auth_status["authenticated"]:
     st.markdown("""
         <div class="login-box">
             <div class="login-left">
                 <img src="https://i.ibb.co/RSbPFh1/candlestick-svgrepo-com.png" class="login-logo" alt="DeepStocks Logo">
-                <h1 class="login-title">Welcome to DeepStocks</h1>
+                <h1 class="login-title">Welcome to Deep<span style='color: #ff4b4b;'>Stocks!</span></h1>
             </div>
     """, unsafe_allow_html=True)
 
@@ -105,22 +109,39 @@ if not st.session_state.auth_status["authenticated"]:
 
     if st.session_state.get("authenticated"):
         set_auth_status(st.session_state["authenticated"], st.session_state["username"])
-        st.rerun()
+        st.experimental_rerun()
     
     st.markdown("</div>", unsafe_allow_html=True)
 
 else:
     username = st.session_state.auth_status["username"]
 
-    @st.cache_data(ttl=600)
-    def load_user_portfolios(username):
-        return load_portfolios(username)
-
-    portfolios = load_user_portfolios(username)
+    portfolios = load_portfolios(username)
 
     with st.sidebar:
-        st.title("Navigation")
-        st.write(f"Welcome, {username}!")
+        col1, col2 = st.columns([4, 1])
+        with col1:
+            st.markdown(
+                f"""
+                <div>
+                    <h1 style='font-size: 2.5em; margin-top: -0.7em;'>
+                        Deep<span style='color: #ff4b4b;'>Stocks</span>
+                    </h1>
+                </div>
+                """,
+                unsafe_allow_html=True
+            )
+
+        with col2:
+            st.markdown(
+                f"""
+                <div style='text-align: right;'>
+                    <img src='https://i.ibb.co/RSbPFh1/candlestick-svgrepo-com.png' width='35' height='35'>
+                </div>
+                """,
+                unsafe_allow_html=True
+            )
+
         portfolio_items = [sac.MenuItem(name, icon='briefcase-fill') for name in portfolios.keys()]
         menu_items = [
             sac.MenuItem('Home', icon='house-fill'),
@@ -131,9 +152,12 @@ else:
         st.markdown("---")
         if st.button("Logout"):
             set_auth_status(False, None)
-            st.rerun()
+            st.experimental_rerun()
 
     if selected_item == 'Home':
         home(username)
     elif selected_item in portfolios:
         portfolio(username, selected_item)
+
+# Save cookies after every interaction
+cookies.save()

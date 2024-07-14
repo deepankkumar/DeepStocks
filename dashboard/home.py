@@ -10,7 +10,33 @@ import pandas as pd
 ALL_HOLDINGS_PORTFOLIO = "All Holdings"
 
 def home(username):
-    st.title(f"Stock Portfolio Management - Home ({username})")
+    
+    col1, col2 = st.columns([4, 1])
+
+    with col1:
+        st.markdown(
+            f"""
+            <div>
+                <h2 style='font-size: 2em; margin-bottom: -0.7em;'>Hi {username},</h2>
+                <h1 style='font-size: 2.5em; margin-top: -0.7em;'>
+                    Welcome to Deep<span style='color: #ff4b4b;'>Stocks!</span>
+                </h1>
+                <p>Let's start managing your stock portfolios efficiently!</p>
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
+
+    with col2:
+        st.markdown(
+            f"""
+            <div style='text-align: right;'>
+                <img src='https://i.ibb.co/RSbPFh1/candlestick-svgrepo-com.png' width='120' height='120'>
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
+        
     st.subheader("Create New Portfolio")
     portfolio_name = st.text_input("Portfolio Name", key="portfolio_name_input")
 
@@ -144,18 +170,27 @@ def home(username):
             st.error("Ticker not found. Please try again.")
 
         
-    if portfolios[portfolio_name].get("stocks"):
-        st.subheader(f"Stocks in {portfolio_name}")
-        df = pd.DataFrame(portfolios[portfolio_name]["stocks"])
-        st.dataframe(df)
+        if portfolios[portfolio_name].get("stocks"):
+            st.subheader(f"Stocks in {portfolio_name}")
+            df = pd.DataFrame(portfolios[portfolio_name]["stocks"])
+            edited_df = st.data_editor(df, num_rows="dynamic", key="editable_df")
 
-    if selected_portfolio:
-        col1, col2 = st.columns([6, 1])
-        with col1:
-            if st.button("Delete Portfolio"):
-                if selected_portfolio in portfolios:
-                    del portfolios[selected_portfolio]
+            col1, col2 = st.columns([1,5])
+            with col1:
+                if st.button("Save Edits"):
+                    portfolios[portfolio_name]["stocks"] = edited_df.to_dict(orient='records')
+                    df = refresh_portfolio(username, portfolio_name, portfolios[portfolio_name]["stocks"], get_stock_info)
+                    save_csv(username, portfolio_name, df)
                     save_portfolios(username, portfolios)
-                    st.success(f"Portfolio '{selected_portfolio}' deleted successfully.")
-                    
-                    st.rerun()
+                    st.success("Portfolio updated successfully.")
+
+            with col2:
+                if st.button("Delete Portfolio"):
+                    if selected_portfolio in portfolios:
+                        del portfolios[selected_portfolio]
+                        save_portfolios(username, portfolios)
+                        st.success(f"Portfolio '{selected_portfolio}' deleted successfully.")
+                        st.rerun()
+
+            
+                        
