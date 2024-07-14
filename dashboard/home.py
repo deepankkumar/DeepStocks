@@ -9,6 +9,7 @@ import pandas as pd
 
 ALL_HOLDINGS_PORTFOLIO = "All Holdings"
 
+
 def home(username):
     
     col1, col2 = st.columns([4, 1])
