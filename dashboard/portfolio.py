@@ -14,7 +14,23 @@ def get_cache_key(portfolio_name, key):
 def portfolio(username, portfolio_name):
     portfolios = load_portfolios(username)
 
-    st.title(f"Portfolio Management - {portfolio_name} ({username})")
+    df = load_csv(username, portfolio_name)
+    merged_df, summary_df = merge_stocks(df)
+    total_invested = summary_df["Cost basis"].values[0]
+    total_current_value = summary_df["Current value"].values[0]
+    total_profit = summary_df["Total profit"].values[0]
+    total_profit_percentage = total_profit / total_invested * 100
+    
+    # Heading section with two columns
+    col1, col2 = st.columns([3, 1])
+    with col1:
+        st.markdown(f"<h1 style='font-size: 3em;'><span style='color: white;'>#</span><span style='color: #ff4b4b;'>{portfolio_name}</span> </h1>", unsafe_allow_html=True)
+  
+    with col2:
+        st.metric("Investing", f"${total_current_value}", f"${total_profit:.2f} ({total_profit_percentage:.1f}%)")
+
+
+
 
     if 'previous_selected_portfolio' not in st.session_state:
         st.session_state['previous_selected_portfolio'] = portfolio_name
@@ -128,8 +144,8 @@ def portfolio(username, portfolio_name):
 
         if top_performers_key not in st.session_state or top_losers_key not in st.session_state:
             with st.spinner("Loading Today's Top Performers and Losers..."):
-                top_performers = df[df['Today Gain'] > 0].nlargest(4, 'Today Gain')
-                top_losers = df[df['Today Gain'] < 0].nsmallest(4, 'Today Gain')
+                top_performers = merged_df[merged_df['Today Gain'] > 0].nlargest(4, 'Today Gain')
+                top_losers = merged_df[merged_df['Today Gain'] < 0].nsmallest(4, 'Today Gain')
                 st.session_state[top_performers_key] = top_performers
                 st.session_state[top_losers_key] = top_losers
 

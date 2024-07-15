@@ -26,6 +26,9 @@ def refresh_portfolio(username, portfolio_name, stocks, get_stock_info, after_ho
         Ticker = stock["Ticker"]
         Shares = float(stock["Shares"])
         Buy_rate = float(stock["Buy rate ($/unit)"])
+        # save the date with datetime object
+        Buy_date = stock["Buy date"]
+        
         stock_info = get_stock_info(Ticker, after_hours=after_hours)
         if stock_info:
             current_price = stock_info["currentPrice"]
@@ -35,7 +38,7 @@ def refresh_portfolio(username, portfolio_name, stocks, get_stock_info, after_ho
             cost_basis = Shares * Buy_rate
             current_value = Shares * current_price
             profit = current_value - cost_basis
-            
+            profit_percentage = (profit / cost_basis) * 100
             # Calculate today's gain
             previous_close = stock_info["previousClose"]
             today_gain = (current_price - previous_close) * Shares
@@ -46,11 +49,13 @@ def refresh_portfolio(username, portfolio_name, stocks, get_stock_info, after_ho
                 "Name": stock_info["shortName"],
                 "Type": stock_info["quoteType"],
                 "Shares": Shares,
+                "Buy date": Buy_date,
                 "Buy rate ($/unit)": Buy_rate,
                 "Current rate ($/unit)": current_price,
                 "Cost basis": cost_basis,
                 "Current value": current_value,
                 "Total profit": profit,
+                "Total profit (%)": profit_percentage,
                 "Today Gain": today_gain,
                 "Today Gain (%)": today_gain_percentage
             })
@@ -68,6 +73,7 @@ def merge_stocks(df):
         "Cost basis": "sum",
         "Current value": "sum",
         "Total profit": "sum",
+        "Total profit (%)": "mean",
         "Today Gain": "sum",
         "Today Gain (%)": "mean"
     }).reset_index()

@@ -40,8 +40,7 @@ st.markdown("""
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 100%;
-        margin: auto;        
+        width: 100%;        
         border-radius: 50px;
         box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
@@ -50,7 +49,7 @@ st.markdown("""
         background-color: transparent;
         color: white;
         border-radius: 30px;
-        padding: 50px;
+        padding: 0px;
         width: 100%;
     }
     .login-title {
